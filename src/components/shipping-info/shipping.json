@@ -28,6 +28,18 @@
     "phone": {
       "type": "string",
       "required": true
+    },
+    "state": {
+      "type": "string",
+      "required": true
+    },
+    "delivery_time": {
+      "type": "string",
+      "required": true
+    },
+    "shipping_type": {
+      "type": "string",
+      "required": true
     }
   },
   "config": {}

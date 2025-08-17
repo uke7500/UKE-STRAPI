@@ -9,9 +9,12 @@ export interface ShippingInfoShipping extends Struct.ComponentSchema {
     address: Schema.Attribute.Text & Schema.Attribute.Required;
     city: Schema.Attribute.String & Schema.Attribute.Required;
     country: Schema.Attribute.String & Schema.Attribute.Required;
+    delivery_time: Schema.Attribute.String & Schema.Attribute.Required;
     full_name: Schema.Attribute.String & Schema.Attribute.Required;
     phone: Schema.Attribute.String & Schema.Attribute.Required;
     postal_code: Schema.Attribute.String & Schema.Attribute.Required;
+    shipping_type: Schema.Attribute.String & Schema.Attribute.Required;
+    state: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
