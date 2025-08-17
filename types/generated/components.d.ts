@@ -1,27 +1,3 @@
-import type { Schema, Struct } from '@strapi/strapi';
-
-export interface ShippingInfoShipping extends Struct.ComponentSchema {
-  collectionName: 'components_shipping_info_shippings';
-  info: {
-    displayName: 'Shipping';
-  };
-  attributes: {
-    address: Schema.Attribute.Text & Schema.Attribute.Required;
-    city: Schema.Attribute.String & Schema.Attribute.Required;
-    country: Schema.Attribute.String & Schema.Attribute.Required;
-    delivery_time: Schema.Attribute.String & Schema.Attribute.Required;
-    full_name: Schema.Attribute.String & Schema.Attribute.Required;
-    phone: Schema.Attribute.String & Schema.Attribute.Required;
-    postal_code: Schema.Attribute.String & Schema.Attribute.Required;
-    shipping_type: Schema.Attribute.String & Schema.Attribute.Required;
-    state: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
-declare module '@strapi/strapi' {
-  export module Public {
-    export interface ComponentSchemas {
-      'shipping-info.shipping': ShippingInfoShipping;
-    }
-  }
-}
+/*
+ * The app doesn't have any components yet.
+ */

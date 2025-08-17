@@ -20,12 +20,6 @@
       "relation": "oneToMany",
       "target": "api::product.product",
       "mappedBy": "order"
-    },
-    "Shipping": {
-      "type": "component",
-      "component": "shipping-info.shipping",
-      "repeatable": true,
-      "required": true
     }
   }
 }

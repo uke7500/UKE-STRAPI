@@ -1,9 +1,15 @@
 {
-  "collectionName": "components_shipping_info_shippings",
+  "kind": "collectionType",
+  "collectionName": "shippings",
   "info": {
+    "singularName": "shipping",
+    "pluralName": "shippings",
     "displayName": "Shipping"
   },
-  "options": {},
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
   "attributes": {
     "full_name": {
       "type": "string",
@@ -26,7 +32,7 @@
       "required": true
     },
     "phone": {
-      "type": "string",
+      "type": "biginteger",
       "required": true
     },
     "state": {
@@ -41,6 +47,5 @@
       "type": "string",
       "required": true
     }
-  },
-  "config": {}
+  }
 }
