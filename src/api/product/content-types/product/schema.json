@@ -52,6 +52,12 @@
       "relation": "manyToOne",
       "target": "api::order.order",
       "inversedBy": "products"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tag.tag",
+      "mappedBy": "product"
     }
   }
 }
