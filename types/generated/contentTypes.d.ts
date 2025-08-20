@@ -384,14 +384,17 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    cart_subtotal_price: Schema.Attribute.Decimal & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    discount: Schema.Attribute.Decimal;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::order.order'> &
       Schema.Attribute.Private;
-    products: Schema.Attribute.Relation<'oneToMany', 'api::product.product'>;
+    order_item: Schema.Attribute.Component<'order-item.order-item', true>;
     publishedAt: Schema.Attribute.DateTime;
+    shipping: Schema.Attribute.Relation<'manyToOne', 'api::shipping.shipping'>;
     total_price: Schema.Attribute.Integer & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -426,12 +429,13 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       'api::product.product'
     > &
       Schema.Attribute.Private;
+    model_no: Schema.Attribute.String & Schema.Attribute.Required;
     name: Schema.Attribute.String & Schema.Attribute.Required;
-    order: Schema.Attribute.Relation<'manyToOne', 'api::order.order'>;
-    price: Schema.Attribute.Integer & Schema.Attribute.Required;
+    price: Schema.Attribute.Decimal & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
+    short_description: Schema.Attribute.String & Schema.Attribute.Required;
     slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
-    stock: Schema.Attribute.Integer & Schema.Attribute.Required;
+    stock: Schema.Attribute.Integer;
     tags: Schema.Attribute.Relation<'oneToMany', 'api::tag.tag'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -457,6 +461,7 @@ export interface ApiShippingShipping extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     delivery_time: Schema.Attribute.String & Schema.Attribute.Required;
+    email: Schema.Attribute.String & Schema.Attribute.Required;
     full_name: Schema.Attribute.String & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -464,6 +469,8 @@ export interface ApiShippingShipping extends Struct.CollectionTypeSchema {
       'api::shipping.shipping'
     > &
       Schema.Attribute.Private;
+    order_id: Schema.Attribute.String & Schema.Attribute.Required;
+    orders: Schema.Attribute.Relation<'oneToMany', 'api::order.order'>;
     phone: Schema.Attribute.BigInteger & Schema.Attribute.Required;
     postal_code: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;

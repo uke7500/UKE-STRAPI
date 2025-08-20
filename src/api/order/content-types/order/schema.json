@@ -11,15 +11,28 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "cart_subtotal_price": {
+      "type": "decimal",
+      "required": true
+    },
+    "discount": {
+      "type": "decimal",
+      "required": false
+    },
     "total_price": {
       "type": "integer",
       "required": true
     },
-    "products": {
+    "order_item": {
+      "type": "component",
+      "component": "order-item.order-item",
+      "repeatable": true
+    },
+    "shipping": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::product.product",
-      "mappedBy": "order"
+      "relation": "manyToOne",
+      "target": "api::shipping.shipping",
+      "inversedBy": "orders"
     }
   }
 }

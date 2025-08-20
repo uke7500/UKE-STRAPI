@@ -20,13 +20,21 @@
       "targetField": "name",
       "required": true
     },
+    "model_no": {
+      "type": "string",
+      "required": true
+    },
+    "short_description": {
+      "type": "string",
+      "required": true
+    },
     "price": {
-      "type": "integer",
+      "type": "decimal",
       "required": true
     },
     "stock": {
       "type": "integer",
-      "required": true
+      "required": false
     },
     "images": {
       "type": "media",
@@ -46,12 +54,6 @@
     "brand": {
       "type": "string",
       "required": true
-    },
-    "order": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::order.order",
-      "inversedBy": "products"
     },
     "tags": {
       "type": "relation",

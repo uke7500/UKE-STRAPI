@@ -46,6 +46,20 @@
     "shipping_type": {
       "type": "string",
       "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "order_id": {
+      "type": "string",
+      "required": true
+    },
+    "orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order.order",
+      "mappedBy": "shipping"
     }
   }
 }
