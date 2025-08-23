@@ -21,6 +21,10 @@
       "relation": "manyToOne",
       "target": "api::product.product",
       "inversedBy": "tags"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
     }
   }
 }
