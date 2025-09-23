@@ -20,7 +20,7 @@
       "required": false
     },
     "total_price": {
-      "type": "integer",
+      "type": "decimal",
       "required": true
     },
     "order_item": {
