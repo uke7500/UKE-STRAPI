@@ -395,7 +395,7 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
     order_item: Schema.Attribute.Component<'order-item.order-item', true>;
     publishedAt: Schema.Attribute.DateTime;
     shipping: Schema.Attribute.Relation<'manyToOne', 'api::shipping.shipping'>;
-    total_price: Schema.Attribute.Integer & Schema.Attribute.Required;
+    total_price: Schema.Attribute.Decimal & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
