@@ -19,6 +19,9 @@
       "type": "decimal",
       "required": false
     },
+    "shipping_charges": {
+      "type": "decimal"
+    },
     "total_price": {
       "type": "decimal",
       "required": true
